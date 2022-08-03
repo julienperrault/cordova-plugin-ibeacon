@@ -1,6 +1,6 @@
 {
   "name": "com.unarin.cordova.beacon",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "description": "Proximity Beacon Monitoring and Transmission Plugin (supporting iBeacons)",
   "cordova": {
     "id": "com.unarin.cordova.beacon",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/petermetz/cordova-plugin-ibeacon.git"
+    "url": "https://github.com/julienperrault/cordova-plugin-ibeacon.git"
   },
   "keywords": [
     "cordova",
@@ -42,6 +42,6 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+    }
   }
 }
