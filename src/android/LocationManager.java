@@ -167,7 +167,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
 
         final boolean requestPermission = this.preferences.getBoolean(
                 REQUEST_BT_PERMISSION_NAME, DEFAULT_REQUEST_BT_PERMISSION);
-           
+
         if(requestPermission)
               tryToRequestMarshmallowLocationPermission();
     }
@@ -1178,7 +1178,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
         debugLog("Advertisement start START BEACON ");
         debugLog(args.toString(4));
         /*
-        Advertisement start START BEACON 
+        Advertisement start START BEACON
             [
                 {
                     "identifier": "beaconAsMesh",
@@ -1191,7 +1191,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
                 7
             ]
         */
-        
+
         JSONObject arguments = args.optJSONObject(0); // get first object
         String identifier = arguments.getString("identifier");
 
@@ -1200,7 +1200,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
         final String major = arguments.has("major") && !arguments.isNull("major") ? arguments.getString("major") : null;
         final String minor = arguments.has("minor") && !arguments.isNull("minor") ? arguments.getString("minor") : null;
 
-        // optinal second member in JSONArray is just a number 
+        // optinal second member in JSONArray is just a number
         final int measuredPower = args.length() > 1 ? args.getInt(1) : -55;
 
         if (major == null && minor != null)
@@ -1418,6 +1418,8 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
         // signal strength and transmission power
         dict.put("rssi", region.getRssi());
         dict.put("tx", region.getTxPower());
+
+        dict.put("ble_address", region.getBluetoothAddress());
 
         // accuracy = rough distance estimate limited to two decimal places (in metres)
         // NO NOT ASSUME THIS IS ACCURATE - it is effected by radio interference and obstacles
